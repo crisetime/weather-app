@@ -1,0 +1,11 @@
+<p>alrigth!</p>
+<input type="text" [(ngModel)]="cityName"/>
+<button (click)="getWeatherReport()" [disabled]="!cityName">get weather report</button>
+
+<div *ngIf="WeatherData" >
+    {{WeatherData.location.name}}
+    <div>
+        <span>{{WeatherData.current.feelslike_c   }}</span>
+        <img [src]="WeatherData.current.condition.icon">
+    </div>
+</div>
